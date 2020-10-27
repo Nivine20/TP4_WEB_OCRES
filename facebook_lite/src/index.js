@@ -50,7 +50,7 @@ class Infos extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			tabType: profils[0],
+			profile: profils[0],
 			color: couleur[0]
 		}
 		this.GetProfils = this.GetProfils.bind(this);
@@ -59,7 +59,7 @@ class Infos extends React.Component {
 
 	GetProfils=(props)=>{
 		this.setState ({
-			tabType:props
+			profile:props
 		})
 	}
 
@@ -87,7 +87,7 @@ class Infos extends React.Component {
 		<div className="container" style={{background : this.state.color}}>
 			<div>
 			{
-				this.state.tabType===profils[0] && 
+				this.state.profile===profils[0] && 
 				<div>
 					<div className="Photo">
 						<img src={Jeanne} alt='jeanne' />
@@ -104,7 +104,7 @@ class Infos extends React.Component {
 				</div>
 			}
 			{
-				this.state.tabType=== profils[1] && 
+				this.state.profile=== profils[1] && 
 				<div>
 					<div className="Photo">
 						<img src={Martine} alt='martine' />
@@ -121,7 +121,7 @@ class Infos extends React.Component {
 				</div>
 			}
 			{
-				this.state.tabType===profils[2] && 
+				this.state.profile===profils[2] && 
 				<div>
 					<div className="Photo">
 						<img src={Claude} alt='claude' />
@@ -144,7 +144,7 @@ class Infos extends React.Component {
 		</div>
 		<div className="container" style={{width : 500}, {height : 200}}>
 			<div className="Publication">
-				<p>{this.state.tabType.publi}</p>
+				<p>{this.state.profile.publi}</p>
 			</div>
 			<div>
 				<button className="bouton5" onClick={this.ChangeCouleur}> 👍 C'est super! </button>
